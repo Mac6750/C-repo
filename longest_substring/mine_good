@@ -1,0 +1,56 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdbool.h>
+
+//Given a string s, find the length of the longest
+//substring
+//without repeating characters.
+
+int lengthOfLongestSubstring(char *str);
+int check_reap(char *str,bool *was_char,size_t size);
+
+int main() {
+    char str[]="abcabcbb\n";
+    int len=lengthOfLongestSubstring(str);
+    printf("length is %d",len);
+    return 0;
+}
+
+int lengthOfLongestSubstring(char *str){
+    int size=strlen(str);
+    bool was_char[256]={false};
+    int max=0;
+    int len=0;
+
+    for(int i=0;i<size;i++) {
+        if(str[i]=='\n' || str[i]==0){
+            break;
+        }
+
+        len= check_reap(&str[i],was_char,size-i);
+
+        memset(was_char,0,256);
+        max=len>max ? len:max;
+        if(max>=size-i){
+            break;
+        }
+
+    }
+
+    return max;
+}
+
+int check_reap(char *str,bool *was_char,size_t size){
+
+    for(int i=0;i<size;i++){
+        char c=str[i];
+        if(was_char[c]==true){
+            return i;
+        }
+        else{
+            was_char[c]=true;
+        }
+    }
+    return size;
+}
+

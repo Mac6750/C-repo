@@ -1,0 +1,3 @@
+/home/mac/CLionProjects/longest_substring/cmake-build-debug/CMakeFiles/longest_substring.dir
+/home/mac/CLionProjects/longest_substring/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/mac/CLionProjects/longest_substring/cmake-build-debug/CMakeFiles/rebuild_cache.dir

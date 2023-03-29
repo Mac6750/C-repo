@@ -1,0 +1,120 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+int main() {
+    int ile_case;
+    int buf = 0;
+    char str[10] = {0};
+    for (int i = 0; i < 10; i++) {
+        int c = getchar();
+        if (c == '\n' || c == EOF) {
+            break;
+        }
+        str[i] = c;
+    }
+
+    ile_case = atoi(str);
+
+    int y[ile_case][3];
+    int m[ile_case][3];
+    int c[ile_case][3];
+    int k[ile_case][3];
+    char string[100] = {0};
+
+    for (int i = 0; i < ile_case; i++) {
+        for (int j = 0; j < 3; j++) {
+
+            for (int is = 0; is < 100; is++) {
+                int c = getchar();
+                if (c == '\n' || c == EOF) {
+                    break;
+                }
+                string[is] = c;
+            }
+
+            sscanf(string, "%d %d %d %d", &c[i][j], &m[i][j], &y[i][j], &k[i][j]);
+            memset(string, 0, 100);
+                    }
+
+    }
+    int min_c[ile_case][];
+    int min_m[ile_case];
+    int min_k[ile_case];
+    int min_y[ile_case];
+    int color[ile_case][4];
+    for (int i = 0;i< ile_case ; i++){    // Set the first 6 elements in the array
+        min_c[i] = 10000000;
+        min_y[i] = 10000000;
+        min_m[i] = 10000000;
+        min_k[i] = 10000000;
+        for(int j=0;j<4;j++){
+            color[ile_case][j] = 0;
+        }
+    }
+
+
+
+    for(int i=0;i<ile_case;i++) {
+
+        for (int j = 0; j < 3; j++) {
+            if(c[i][j]<min_c[i]){min_c[i]=c[i][j];}
+
+            if(y[i][j]<min_y[i]){min_y[i]=y[i][j];}
+
+            if(k[i][j]<min_k[i]){min_k[i]=k[i][j];}
+
+            if(m[i][j]<min_m[i]){min_m[i]=m[i][j];}
+        }
+
+        int suma=min_c[i]+min_y[i]+min_m[i]+min_k[i];
+        printf("get if\n");
+
+        if(suma<1000000){
+            printf("IMPOSSIBLE\n");
+            continue;
+        }
+        else{
+            int max=1000000;
+            int ile_zost=max;
+            if(min_c[i] > ile_zost){
+                color[i][0]=ile_zost;
+               continue;
+            }
+            else{
+                color[i][0]=min_c[i];
+                ile_zost=ile_zost-color[i][0];
+            }
+
+            if(min_m[i] > ile_zost){
+                color[i][1]=ile_zost;
+                 continue;
+            }
+            else{
+                color[i][1]=min_m[i];
+                ile_zost=ile_zost-color[i][1];
+            }
+
+            if(min_y[i] > ile_zost){
+                color[i][2]=ile_zost;
+                continue;
+            }
+            else{
+                color[i][2]=min_y[i];
+                ile_zost=ile_zost-color[i][2];
+            }
+            color[i][3]=ile_zost;
+
+
+        }
+    }
+
+    for(int i=0;i<ile_case;i++) {
+        for (int q = 0; q < 4; q++) {
+            printf("%d\n", color[i][q]);
+
+        }
+    }
+
+    return 0;
+}

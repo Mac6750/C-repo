@@ -1,0 +1,3 @@
+/home/mac/CLionProjects/sort_table_of_int/cmake-build-debug/CMakeFiles/sort_table_of_int.dir
+/home/mac/CLionProjects/sort_table_of_int/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/mac/CLionProjects/sort_table_of_int/cmake-build-debug/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,23 @@
+# ninja log v5
+21	37	1679500601201458382	longest_substring	3c9e4531d1acd897
+0	21	1679500601185458283	CMakeFiles/longest_substring.dir/main.c.o	88f1efcceb503d78
+0	19	1679500696626052738	CMakeFiles/longest_substring.dir/main.c.o	88f1efcceb503d78
+19	34	1679500696642052839	longest_substring	3c9e4531d1acd897
+0	20	1679500715638172557	CMakeFiles/longest_substring.dir/main.c.o	88f1efcceb503d78
+20	37	1679500715654172658	longest_substring	3c9e4531d1acd897
+0	20	1679500842370981502	CMakeFiles/longest_substring.dir/main.c.o	88f1efcceb503d78
+20	38	1679500842386981605	longest_substring	3c9e4531d1acd897
+0	20	1679500862947114340	CMakeFiles/longest_substring.dir/main.c.o	88f1efcceb503d78
+20	37	1679500862963114443	longest_substring	3c9e4531d1acd897
+0	21	1679501001992021178	CMakeFiles/longest_substring.dir/main.c.o	88f1efcceb503d78
+21	38	1679501002008021284	longest_substring	3c9e4531d1acd897
+0	19	1679501475813537283	CMakeFiles/longest_substring.dir/main.c.o	88f1efcceb503d78
+19	35	1679501475829537656	longest_substring	3c9e4531d1acd897
+0	19	1679501504754201133	CMakeFiles/longest_substring.dir/main.c.o	88f1efcceb503d78
+19	36	1679501504770201494	longest_substring	3c9e4531d1acd897
+0	18	1679501513162389845	CMakeFiles/longest_substring.dir/main.c.o	88f1efcceb503d78
+19	35	1679501513178390201	longest_substring	3c9e4531d1acd897
+0	19	1679501560255414016	CMakeFiles/longest_substring.dir/main.c.o	88f1efcceb503d78
+19	37	1679501560275414439	longest_substring	3c9e4531d1acd897
+0	18	1679501681665825343	CMakeFiles/longest_substring.dir/main.c.o	88f1efcceb503d78
+18	36	1679501681685825716	longest_substring	3c9e4531d1acd897

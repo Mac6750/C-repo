@@ -1,0 +1,3 @@
+/home/mac/CLionProjects/N-queens-problem/cmake-build-debug/CMakeFiles/N_queens_problem.dir
+/home/mac/CLionProjects/N-queens-problem/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/mac/CLionProjects/N-queens-problem/cmake-build-debug/CMakeFiles/rebuild_cache.dir

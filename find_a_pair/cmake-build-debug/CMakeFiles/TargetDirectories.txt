@@ -1,0 +1,3 @@
+/home/mac/CLionProjects/find_a_pair/cmake-build-debug/CMakeFiles/find_a_pair.dir
+/home/mac/CLionProjects/find_a_pair/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/mac/CLionProjects/find_a_pair/cmake-build-debug/CMakeFiles/rebuild_cache.dir

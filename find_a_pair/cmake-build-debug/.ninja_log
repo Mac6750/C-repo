@@ -1,0 +1,17 @@
+# ninja log v5
+0	35	1678897314161062697	CMakeFiles/find_a_pair.dir/main.c.o	14bfe4dcb2ecb315
+35	51	1678897314177062896	find_a_pair	dcede99887ce4f31
+0	17	1678897324381189033	CMakeFiles/find_a_pair.dir/main.c.o	14bfe4dcb2ecb315
+17	32	1678897324397189231	find_a_pair	dcede99887ce4f31
+0	18	1678897446466698732	CMakeFiles/find_a_pair.dir/main.c.o	14bfe4dcb2ecb315
+18	33	1678897446482698929	find_a_pair	dcede99887ce4f31
+0	18	1678898000629559519	CMakeFiles/find_a_pair.dir/main.c.o	14bfe4dcb2ecb315
+18	35	1678898000645559717	find_a_pair	dcede99887ce4f31
+0	21	1678898056990257736	CMakeFiles/find_a_pair.dir/main.c.o	14bfe4dcb2ecb315
+21	41	1678898057006257935	find_a_pair	dcede99887ce4f31
+1	19	1678898111326930931	CMakeFiles/find_a_pair.dir/main.c.o	14bfe4dcb2ecb315
+19	35	1678898111342931130	find_a_pair	dcede99887ce4f31
+0	20	1678899807731396489	CMakeFiles/find_a_pair.dir/main.c.o	14bfe4dcb2ecb315
+20	36	1678899807747396683	find_a_pair	dcede99887ce4f31
+0	19	1678899833619712199	CMakeFiles/find_a_pair.dir/main.c.o	14bfe4dcb2ecb315
+19	36	1678899833635712395	find_a_pair	dcede99887ce4f31

@@ -1,0 +1,176 @@
+#include <stdio.h>
+#include <malloc.h>
+#include <string.h>
+#include <stdlib.h>
+/**
+ * Note: The returned array must be malloced, assume caller calls free().
+ */
+//Given an array of integers nums, sort the array in ascending order and return it.
+
+//You must solve the problem without using any built-in
+//functions in O(nlog(n)) time complexity and with the smallest space complexity possible.
+int* sortArray(int* nums, int numsSize, int* returnSize);
+int merge(int* tab_a,size_t size);
+
+    int main() {
+    //printf("Hello, World!\n");
+    int tab[5*10000];
+    for(int i=0;i<5*10000;i++) {
+        tab[i]=i;
+    }
+    int*wsk=NULL;
+    int size=0;
+    int numssize=sizeof(tab)/sizeof(tab[0]);
+    wsk=sortArray(tab,numssize,&size);
+    for(int i=0;i<numssize;i++) {
+            printf("wsk [ %d ]=%d\n", i, wsk[i]);
+    }
+    free(wsk);
+    return 0;
+}
+int* sortArray(int* nums, int numsSize, int* returnSize){
+    int *tab=malloc(numsSize*sizeof(int));
+
+    if(tab==NULL){
+        return 0;
+    }
+    *returnSize=numsSize;
+
+    for(int i=0;i<numsSize;i+=4){
+       int buf=0;
+       tab[i]=nums[i];
+       tab[i+1]=nums[i+1];
+       tab[i+2]=nums[i+2];
+       tab[i+3]=nums[i+3];
+
+       if(tab[i]<tab[i+1]){
+           buf=tab[i];
+           tab[i]=tab[i+1];
+           tab[i+1]=buf;
+       }
+        if(tab[i+2]<tab[i+3]){
+            buf=tab[i+2];
+            tab[i+2]=tab[i+3];
+            tab[i+3]=buf;
+        }
+
+        if(tab[i]<tab[i+2]){
+            buf=tab[i];
+            tab[i]=tab[i+2];
+            tab[i+2]=buf;
+        }
+
+        if(tab[i+1]<tab[i+3]){
+            buf=tab[i+1];
+            tab[i+1]=tab[i+3];
+            tab[i+3]=buf;
+        }
+
+        if(tab[i+1]<tab[i+2]){
+            buf=tab[i+1];
+            tab[i+1]=tab[i+2];
+            tab[i+2]=buf;
+        }
+
+    }
+
+    int ind=0;
+    for(int k=4;k<numsSize;k=k*2) {
+        for (int j = 0;j  < numsSize/(k*2);j++){
+
+            merge(&tab[j*k*2], k);
+            for(int i=0;i<numsSize;i++) {
+                //printf("tab_a [ %d ]=%d\n", i, tab[i]);
+            }
+        }
+
+    }
+
+
+    return tab;
+}
+int merge(int* tab_a,size_t size){
+    int* tab_b=&tab_a[size];
+    int min_ind=0;
+    int max_ind=0;
+    int buf[size];
+    for(int i=0;i<size;i++){
+        buf[i]=0;
+    }
+
+    //da sie wkleic pomiedzy, za ,przed
+    //wklej za
+    if(tab_b[0]<=tab_a[size-1]){
+        //wklej_za();
+        //puts("za");
+        return 1;
+    }
+    //wklej przed
+    else if(tab_b[size-1]>=tab_a[0]){
+        //wkleJ_przed();
+        memcpy(buf,tab_a,size*sizeof(int));
+        memcpy(tab_a,tab_b,size*sizeof(int));
+        memcpy(tab_b,buf,size*sizeof(int));
+        //puts("przed");
+        return 1;
+    }
+    //wklej pomiedzy
+
+    for(int i=0;i<size;i++) {
+        if (tab_b[0] < tab_a[size - 1 - i]) {
+            if (tab_b[size - 1 ] > tab_a[size - i]) {
+                //wklej_pomiedzy();
+                memcpy(buf, &tab_a[size - i], (i + 1) * sizeof(int));
+                memcpy(&tab_a[size - i], tab_b, size * sizeof(int));
+                memcpy(&tab_b[size - i], buf, size * sizeof(int));
+                //puts("pomiedzy");
+                return 1;
+            } else {
+                break;
+            }
+        }
+    }
+
+    //wklej z przeplotem
+    int byl_kop=0;
+    int count=0;
+    //puts("z przeplotem");
+    for(int j=0;j<size;j++){
+
+        for(int i=1;i<size;i++){
+            int b=tab_b[j];
+            int a=tab_a[size-1-i];
+            if(tab_b[j]<=tab_a[size+count-1-i]){
+
+                byl_kop=1;
+                for(int i=0;i<size;i++) {
+                    //printf("tab_a [ %d ]=%d\n", i, tab_a[i]);
+                }
+                for(int i=0;i<size;i++) {
+                    //printf("tab_b [ %d ]=%d\n", i, tab_b[i]);
+                }
+                memcpy(buf,&tab_a[size+count-i],i*sizeof(int));
+                memcpy(&tab_a[size+count-i],&tab_b[j],sizeof(int));
+
+                memcpy(&tab_a[size-i+count+1],buf,i*sizeof(int));
+                for(int i=0;i<size;i++) {
+                    //printf("tab_a [ %d ]=%d\n", i, tab_a[i]);
+                }
+                for(int i=0;i<size;i++) {
+                    //printf("tab_b [ %d ]=%d\n", i, tab_b[i]);
+                }
+                count++;
+                break;
+             }
+        }
+
+        if(byl_kop==0){
+            memcpy(buf,tab_a,size*sizeof(int));
+            memcpy(tab_a,&tab_b[j],sizeof(int));
+            memcpy(&tab_a[1],buf,size*sizeof(int));
+            byl_kop=0;
+        }
+    }
+
+    return 0;
+}

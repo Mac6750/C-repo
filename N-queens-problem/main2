@@ -1,0 +1,32 @@
+#include <stdio.h>
+//Print all possible solutions to N–Queens problem
+#define N 9
+struct queen{
+    int row;
+    int col;
+};
+int place_queen(char *queen_table,size_t szq );
+int main() {
+    char queen_table[N][N];
+
+        if(place_queen()==0){
+            remove_queen();
+        }
+        else{
+
+        }(place_queen()==0){
+            remove_queen();
+        }
+    }
+
+    printf("Hello, World!\n");
+
+    return 0;
+}
+void place_queen(char *queen_table,size_t szq ){
+    for(int i=0,int j=c;i<N;i++){
+
+        }
+    }
+
+}

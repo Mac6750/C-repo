@@ -1,0 +1,89 @@
+#include <stdio.h>
+#include <string.h>
+
+//Given a string s, find the length of the longest
+//substring
+//without repeating characters.
+int length(char *str);
+int check_reap(char *str,char c,size_t size);
+
+int main() {
+    char str[20]="pwwkew";
+     int len=length(str,20);
+    printf("length is %d",len);
+    return 0;
+}
+
+int length(char *str){
+    int size=strlen(str);
+    char buff[size];
+    char *ptr=buff;
+    memset(buff,0,size);
+    int przes=0;
+    unsigned int len=0;
+
+    for (int str_i = 0,buf_i=0; str_i < size && buf_i<size; buf_i++,str_i++) {
+        if (str[str_i] == '/n' || str[str_i] == 0){
+            break;
+        }
+
+        if (buf_i == 0)
+        {
+            ptr[0] = str[str_i];
+        }
+
+        else
+        {
+            przes=check_reap(ptr, str[str_i], buf_i);
+
+            if(przes==0)
+            {
+                buff[buf_i] = str[str_i];
+            }
+
+            else if(przes>0)
+            {
+                ptr+=przes;
+                size=size-przes;
+                //buf_i++;
+                buff[buf_i] = str[str_i];
+                //buf_i=buf_i-przes;
+            }
+        }
+        len= strlen(ptr);
+        //len = &buff[-1]-ptr;
+    }
+
+    return len;
+}
+
+int check_reap(char *str,char c,size_t size){
+
+    for(int i=0;i<size;i++){
+        if(str[i]==c){
+            return i+1;
+        }
+    }
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
